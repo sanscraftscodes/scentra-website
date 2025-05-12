@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCENTRA</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    header video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .top-left-logo,
+    .bottom-right-image {
+      position: absolute;
+      z-index: 10;
+      width: 100px;
+      height: auto;
+      filter: drop-shadow(0 6px 10px rgba(235, 24, 147, 0.4)); /* soft realistic pop */
+    }
+
+
+    .top-left-logo {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 200px;       /* Increased size */
+      height: auto;       /* Maintain aspect ratio */
+      z-index: 10;
+      pointer-events: none; /* Optional: Makes it non-clickable */
+    }
+    .bottom-right-image {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      width: 250px; /* Adjust as needed */
+      height: auto;
+      z-index: 10;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end; /* only push links to the right */
+      align-items: center;
+      padding: 20px 50px;
+    }
+
+    .navbar img {
+      width: 50px;
+    }
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+    }
+    .hero {
+      text-align: center;
+      margin-top: 20vh;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 70px;
+      letter-spacing: 3px;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 20px;
+      filter: drop-shadow(0 6px 10px rgba(44, 254, 247, 0.4)); /* soft realistic pop */
+    }
+    .hero .offer {
+      margin-top: 30px;
+      font-size: 18px;
+      background: #fff;
+      color: #000;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px;
+    }
+    .hero h1 {
+      text-shadow: 2px 2px 8px rgba(212, 94, 163, 0.7);
+    }
+
+ 
+    .scroll-section {
+      padding: 60px 20px;
+      background: #fff9f0;
+      text-align: center;
+      max-width: 1400px;  /* increased for larger screens */
+      margin: 0 auto;
+    }
+
+
+    .scroll-images {
+      display: flex;
+      justify-content: center;         /* Center images initially */
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;   /* Smooth scrolling with snap */
+      scroll-padding: 20px;
+    }
+
+    .scroll-images img {
+      width: 300px; /* increased from 250px */
+      height: 400px; /* optional fixed height for uniformity */
+      border-radius: 20px;
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .scroll-images::-webkit-scrollbar {
+      height: 10px;
+    }
+    .scroll-images::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+    .scroll-images::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+
+    .products-section {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .products-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 15px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 15px 0 10px;
+    }
+    .product button {
+      background: black;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video src="img/welcome page bg video.mp4" autoplay loop muted></video>
+    <img src="img/Remove background project.png" alt="SCENTRA logo" class="top-left-logo">
+    <img src="img/main img.png" alt="Bottom Right Image" class="bottom-right-image">
+
+
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div class="hero-content">
+        <h1>SCENTRA</h1>
+        <p>Forgot your perfume? Don’t worry — we’ve got your back, just one spray away!</p>
+        <div class="offer">Pay a penny, spray your scent — freshness on the go!</div>
+      </div>
+    </div>
+    
+  </header>
+
+  <section class="scroll-section">
+    <h2>Explore Our Fragrance Vibes</h2>
+    <div class="scroll-images">
+      <img src="img/1.jpg" alt="Perfume Image 1">
+      <img src="img/5.jpg" alt="Perfume Image 2">
+      <img src="img/2.jpg" alt="Perfume Image 3">
+      <img src="img/7.jpg" alt="Perfume Image 4">
+    </div>
+  </section>
+
+  <section class="products-section">
+    <h2>Choose Your Perfume to Spray</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="img/rose whisper perfume.png" alt="Perfume 1">
+        <h3>Valentino</h3>
+        <p>Rs.15.00/spray</p>
+        <button class="spray-btn" data-perfume="Valentino" data-amount="15">Spray Now</button>
+      </div>
+      <div class="product">
+        <img src="img/3.jpg" alt="Perfume 2">
+        <h3>Chanel N5</h3>
+        <p>Rs.5.00/spray</p>
+        <button class="spray-btn" data-perfume="Chanel N5" data-amount="5">Spray Now</button>
+      </div>
+      <div class="product">
+        <img src="img/citrus breeze flavour.png" alt="Perfume 3">
+        <h3>Citrus Breeze</h3>
+        <p>Rs.10.00/spray</p>
+        <button class="spray-btn" data-perfume="Citrus Breeze" data-amount="10">Spray Now</button>
+      </div>
+      <div class="product">
+        <img src="img/woody aura.png" alt="Perfume 4">
+        <h3>Woody Aura</h3>
+        <p>Rs.20/spray</p>
+        <button class="spray-btn" data-perfume="Woody Aura" data-amount="20">Spray Now</button>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Payment Modal -->
+  <div id="payment-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Scan & Pay</h2>
+      <p id="modal-perfume-name">Perfume Name</p>
+      <p id="modal-amount">Rs. XX.00</p>
+      <div class="qr-box">
+        <img src="img/fake-qr.png" alt="Fake QR" id="qr-image">
+      </div>
+      <button id="pay-button">Pay</button>
+      <div id="processing" class="hidden">
+        <img src="img/loading.gif" alt="Processing...">
+        <p>Processing Payment...</p>
+      </div>
+      <div id="success" class="hidden">
+        <img src="img/success-tick.gif" alt="Success!">
+        <p>Payment Successful!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Razorpay script (dummy for now, actual integration will come next) -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js"></script>
+
+
+
+  <script>
+    const modal = document.getElementById("payment-modal");
+    const modalAmount = document.getElementById("modal-amount");
+    const modalPerfume = document.getElementById("modal-perfume-name");
+
+    const payButton = document.getElementById("pay-button");
+    const processingDiv = document.getElementById("processing");
+    const successDiv = document.getElementById("success");
+  
+    const sprayButtons = document.querySelectorAll(".product button");
+  
+    const prices = [15, 5, 10, 20]; // price per spray for 4 products
+  
+    sprayButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        modalAmount.textContent = `Rs. ${prices[index]}.00`;
+        modalPerfume.textContent = button.getAttribute("data-perfume");
+
+        modal.classList.remove("hidden");
+        processingDiv.classList.add("hidden");
+        successDiv.classList.add("hidden");
+      });
+    });
+  
+    payButton.addEventListener("click", () => {
+      // Start fake processing
+      payButton.style.display = "none";
+      processingDiv.classList.remove("hidden");
+  
+      // Fake delay to simulate payment
+      setTimeout(() => {
+        processingDiv.classList.add("hidden");
+        successDiv.classList.remove("hidden");
+  
+        const audio = new Audio("sound/success.mp3"); // Add your tick sound file here
+        audio.play();
+  
+        // Trigger backend call to spray via Arduino (next step)
+        fetch("/trigger-spray", { method: "POST" });
+  
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          payButton.style.display = "inline-block";
+        }, 3000);
+      }, 3000);
+    });
+
+
+
+    const closeBtn = document.querySelector(".modal .close");
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      payButton.style.display = "inline-block";
+      processingDiv.classList.add("hidden");
+      successDiv.classList.add("hidden");
+    });
+
+  </script>
+  
+</body>
+</html>
